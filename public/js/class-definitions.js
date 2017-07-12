@@ -25,7 +25,7 @@
  *
  */
 
-var sahara_animal = 'The Addax';
+ var sahara_animal = 'The Addax';
 
 /* Step 4
  *
@@ -35,7 +35,7 @@ var sahara_animal = 'The Addax';
  * Capitalize the names.
  */
 
-var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+ var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
 /* Step 5
  *
@@ -45,7 +45,7 @@ var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus
  *
  */
 
-var galilean_moons = ['Io', 'Europa', 'Ganymede', 'Callisto'];
+ var galilean_moons = ['Io', 'Europa', 'Ganymede', 'Callisto'];
 
 /* Step 6 φ
  *
@@ -54,7 +54,7 @@ var galilean_moons = ['Io', 'Europa', 'Ganymede', 'Callisto'];
  *
  */
 
-var golden_ratio = 1.61803398874;
+ var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -63,7 +63,7 @@ var golden_ratio = 1.61803398874;
  *
  */
 
-var earths_water_composition = 0.71;
+ var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -72,7 +72,7 @@ var earths_water_composition = 0.71;
  *
  */
 
-var club_name = 'Fight Club';
+ var club_name = 'Fight Club';
 
 /* Step 9
  *
@@ -84,7 +84,7 @@ var club_name = 'Fight Club';
  *   unknown => undefined
  */
 
-var gender = {
+ var gender = {
   female: 'female',
   male: 'male',
   unknown: undefined
@@ -103,7 +103,7 @@ var gender = {
  *
  */
 
-var princess_leia = {
+ var princess_leia = {
   name: "Leia Organa",
   money: 890,
   age: 20,
@@ -122,7 +122,7 @@ var princess_leia = {
  *
  */
 
-var domains = {
+ var domains = {
   'ycombinator.com': '198.41.190.47',
   'laughingsquid.com': '162.159.247.97',
   'slumlordhosting.com': '198.61.179.126',
@@ -143,7 +143,7 @@ var domains = {
  *
  */
 
-var browsers = {
+ var browsers = {
   Chromium: 'google.com',
   Safari: 'apple.com',
   Opera: 'opera.com',
@@ -170,7 +170,7 @@ var browsers = {
  *
  */
 
-var rainbow = {
+ var rainbow = {
   colors: {
     red: '#F0280A',
     orange: '#FF8800',
@@ -198,7 +198,7 @@ var rainbow = {
  *
  */
 
-var linuxFlavors = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
+ var linuxFlavors = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
 
 
 
@@ -215,7 +215,7 @@ var linuxFlavors = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Biebe
  *
  */
 
-var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
+ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
 
 /* Step 16
  *
@@ -229,7 +229,7 @@ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
  *
  */
 
-var laptopCosts = {
+ var laptopCosts = {
   MacBook: 1500,
   Alienware: 2500,
   HP: 499,
@@ -251,6 +251,7 @@ var laptopCosts = {
  *
  */
 
+ var livingOrganismClassification = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"];
 
 /* Step 18
  *
@@ -265,6 +266,7 @@ var laptopCosts = {
  *
  */
 
+ var scmList = ["git", "svn", "mercurial", "bazaar", "cvs"];
 
 /* Step 19
  *
@@ -284,6 +286,14 @@ var laptopCosts = {
  *
  */
 
+var beers = {
+   IPA: "Ale",
+   Lager: "Strong",
+   Heffeweisen: "German",
+   Stout: ["Thick", "Dark"],
+   Porter: "Bitter",
+   Ale: ["Light","Golden"]
+}
 
 /* Step 20
  *
@@ -293,6 +303,10 @@ var laptopCosts = {
  * @return {String}
  *
  */
+
+function sahara_river(){
+  return 'Nile River';
+}
 
 
 /* Step 21
@@ -306,6 +320,9 @@ var laptopCosts = {
  *
  */
 
+function addNumbers (num1, num2){
+  return num1+num2;
+}
 
 /* Step 22
  *
@@ -319,6 +336,13 @@ var laptopCosts = {
  *
  */
 
+function installLinux (type){
+  if (linuxFlavors.indexOf(type) > -1){
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* Step 23
  *
@@ -338,6 +362,19 @@ var laptopCosts = {
  *
  */
 
+ function drink (beerType) {
+  if (!beers.hasOwnProperty(beerType)){
+    return false;
+  }
+  if (Array.isArray(beers[beerType])){
+      var string = 'This ' + beerType + ' is ';
+      var beerArr = beers[beerType];
+      var descr = beerArr.forEach((beer) => {return string += (beer + ' and ')});
+      console.log(string);
+      return string;
+  }
+  return 'This ' + beerType + ' is ' + beers[beerType] + '.';
+}
 
 /* Step 24
  *
@@ -1051,9 +1088,9 @@ var dinner;
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal;
-var coldBloodedAnimal;
-var notWarmOrColdAnimal;
+ var warmBloodedAnimal;
+ var coldBloodedAnimal;
+ var notWarmOrColdAnimal;
 
 
 /* Step 92
@@ -1062,8 +1099,8 @@ var notWarmOrColdAnimal;
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+ var streetDriving;
+ var forwardDriving;
 
 
  /* Step 93
@@ -1072,8 +1109,8 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+ var decagon;
+ var polygon;
 
 
 /* Step 94
@@ -1082,8 +1119,8 @@ var polygon;
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+ var openAClosedBox;
+ var closeAnOpenBox;
 
 
  /* Step 95
@@ -1092,8 +1129,8 @@ var closeAnOpenBox;
  * and assign the values to each variable below.
  *
  */
-var openAClosedDoor;
-var closeAnOpenDoor;
+ var openAClosedDoor;
+ var closeAnOpenDoor;
 
 
 /* Step 96
@@ -1102,8 +1139,8 @@ var closeAnOpenDoor;
  * and assign the values to each variable below.
  *
  */
-var redShoesSize7;
-var blackShoesSize10;
+ var redShoesSize7;
+ var blackShoesSize10;
 
 
  /* Step 97
@@ -1112,8 +1149,8 @@ var blackShoesSize10;
  * and assign the values to each variable below.
  *
  */
-var farTooTallAStory;
-var shortStory;
+ var farTooTallAStory;
+ var shortStory;
 
 
  /* Step 98
@@ -1122,8 +1159,8 @@ var shortStory;
  * and assign the values to each variable below.
  *
  */
-var kitchenLightsOn;
-var porchLightsOff;
+ var kitchenLightsOn;
+ var porchLightsOff;
 
 
  /* Step 99
@@ -1132,8 +1169,8 @@ var porchLightsOff;
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+ var cookieMonsterPwns;
+ var cookieMonsterBlocked;
 
 
  /* Step 100
@@ -1142,5 +1179,5 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+ var badForYou;
+ var goodForYou;
