@@ -217,6 +217,22 @@ Pen.prototype.write = function (str){
  *
  */
 
+function Garden(plantsTotal){
+  this.plantsTotal = plantsTotal;
+  this.isWatered = false;
+}
+
+Garden.prototype.water = function (){
+  this.isWatered = true;
+}
+
+Garden.prototype.grow = function (){
+  if (this.isWatered === true){
+    this.plantsTotal++;
+  } else {
+    return false;
+  }
+}
 
 /* Step 32
  *
@@ -234,6 +250,25 @@ Pen.prototype.write = function (str){
  *   removePlanet
  *
  */
+
+function SolarSystem (){
+  this.planets = [];
+}
+
+SolarSystem.prototype.addPlanet = function (planet){
+  this.planets.push(planet);
+}
+
+SolarSystem.prototype.removePlanet = function (planet){
+  if (!planet){
+    this.planets.pop();
+  }
+  if(this.planets.indexOf(planet) > -1){
+    console.log(this.planets.indexOf(planet));
+    var index = this.planets.indexOf(planet);
+    this.planets.splice(index, 1);
+  }
+}
 
 
 /* Step 33
