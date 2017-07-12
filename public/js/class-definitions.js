@@ -328,7 +328,6 @@ PrincessLeia.prototype.getsInTrouble = function(){
 
 PrincessLeia.prototype.marries = function(loveInterest){
   if(loveInterest === 'Han Solo'){
-    console.log('Luke Skywalker says gross');
     return true;
   } else if (loveInterest === 'Luke Skywalker') {
     return 'Gross!'
@@ -356,6 +355,18 @@ PrincessLeia.prototype.marries = function(loveInterest){
  *
  */
 
+function Stapler (color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+}
+
+Stapler.prototype.staplePapers = function (number){
+  if(number <= this.maxPapers){
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* Step 35
  *
@@ -396,6 +407,60 @@ PrincessLeia.prototype.marries = function(loveInterest){
  *
  */
 
+function Scientist (name, money, age, gender){
+  const person = new Person(name, money, age, gender);
+
+  for (key in person){
+    this[key] = person[key]
+  }
+
+  this.disciplines = [];
+  this.discoveries = [];
+}
+
+Scientist.prototype = Object.create(Person.prototype);
+
+Scientist.prototype.addDiscipline = function (discipline) {
+  this.disciplines.push(discipline);
+  return this.disciplines;
+}
+
+Scientist.prototype.checkDiscipline = function (discipline){
+  if(this.disciplines.indexOf(discipline) > -1){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+Scientist.prototype.addDiscovery = function (newDiscovery) {
+  this.discoveries.push(newDiscovery);
+  console.log('my discoveries', this.discoveries);
+  console.log('my discoveries', this.discoveries.length);
+  var string = 'I discovered ';
+
+  this.discoveries.forEach((c, i, array) => {
+    if (array.length > 1){
+      if (i < array.length - 2){
+          string += (c + ', ');
+      }
+      if (i === array.length - 2){
+          string += (c);
+      }
+      if (i === array.length - 1) {
+          string += ' and ' + (c) + '.';
+      }
+    } else if (array.length === 1) {
+      console.log('length is 1');
+      return string += (c + '.');
+    } else {
+      console.log('no length');
+      return 'I haven\'t discovered anything yet.';
+    }
+  });
+
+  return string;
+}
 
 /* Step 36
  *

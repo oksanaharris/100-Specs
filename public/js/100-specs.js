@@ -682,7 +682,7 @@ HundredSpecs.prototype = {
 			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
 			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Gravity")).to,"I discovered Gravity.");
 			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Theory of Relativity")).to,"I discovered Gravity and Theory of Relativity.");
-			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Jesus Christ")).to,"I discovered Gravity, Theory of Relativity, and Jesus Christ.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Jesus Christ")).to,"I discovered Gravity, Theory of Relativity and Jesus Christ.");
 		});
 	}
 	,step34: function() {
