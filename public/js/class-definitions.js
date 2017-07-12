@@ -108,7 +108,7 @@ function installLinux (type){
   }
 }
 
- function drink (beerType) {
+function drink (beerType) {
   if (!beers.hasOwnProperty(beerType)){
     return false;
   }
@@ -116,7 +116,6 @@ function installLinux (type){
       var string = 'This ' + beerType + ' is ';
       var beerArr = beers[beerType];
       var descr = beerArr.forEach((beer) => {return string += (beer + ' and ')});
-      console.log(string);
       return string;
   }
 
@@ -138,98 +137,57 @@ function listLivingOrgClass () {
   return list;
 }
 
+function favoritePlanet (currentPlanet){
+  if (planets.indexOf(currentPlanet) > -1){
+    var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+    return 'I\'m from ' + currentPlanet + ', but I wish I could go to ' + randomPlanet + '.';
+  } else {
+    return currentPlanet + ' is not a planet!';
+  }
+}
 
-/* Step 26
- *
- * Define a function named "favoritePlanet" that
- * takes in the person's current planet and validates
- * that the planet exists. If it doesn't, return the
- * following message:
- *
- * "{currentPlanet} is not a planet!"
- *
- * If the planet does exist, select a different, random
- * planet from the "planets" variable. Once selected,
- * return the following message:
- *
- * "I'm from {currentPlanet}, but I wish I could go to {randomPlanet}."
- *
- * @param {String}
- * @return {String}
- *
- */
+class Person {
+  constructor (name, money, age, gender){
+    this.name = name;
+    this.money = money;
+    this.age = age;
+    this.gender = gender;
+  }
 
+  spendMoney(amount){
+    this.money -= amount;
+  }
 
-/* Step 27
- *
- * Define a class named "Person" that has properties for
- * "name," "money," "age," and "gender." Pass values for
- * all these properies in the constructor. Create methods
- * named "spendMoney" and "earnMoney" that each take an
- * amount of money and add or subtract them to this
- * person's money.
- *
- * class
- *   Person
- * properties
- *   @param {String} name
- *   @param {String} money
- *   @param {String} age
- *   @param {String} gender
- *
- * methods
- *   spendMoney
- *   earnMoney
- *
- */
+  earnMoney(amount){
+    this.money += amount;
+  }
+}
 
+function purchaseLaptop (laptop){
+  if(laptopCosts.hasOwnProperty(laptop)){
+    return laptopCosts[laptop].toString();
+  } else {
+    return -1;
+  }
 
-/* Step 28
- *
- * Define a function named "purchaseLaptop" that takes
- * a laptop as a parameter. If the laptop is valid as
- * defined in "laptopCosts" then return the cost as a string. Otherwise,
- * return -1
- *
- * @param {String}
- * @return {String}
- *
- */
+}
 
+function canTalkAbout (club){
+  if(club === club_name){
+    return false;
+  } else {
+    return true;
+  }
+}
 
-/* Step 29
- *
- * Define a function named "canTalkAbout" that takes
- * a club as a parameter. Return true if you can
- * talk about the club and false if the club passed
- * in has the same value as "club_name"
- *
- * @param {String}
- * @return {Bool}
- *
- */
+function Pen (color){
+ this.color = color;
+}
 
+Pen.prototype.write = function (str){
+  return this.color + ': ' + str;
+};
 
-/* Step 30
- *
- * Define an ES5 class named "Pen" with a property for
- * color and a class method named "write" that takes
- * a message string as a parameter and returns the
- * string back with the pen's color added to the
- * beginning of the string
- *
- * example: "{color}: {Message passed in}"
- *
- * class
- *   Pen
- *
- * properties
- *   @param {String} color
- *
- * methods
- *   write
- *
- */
 
 
 /* Step 31
