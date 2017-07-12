@@ -305,6 +305,39 @@ SolarSystem.prototype.removePlanet = function (planet){
  */
 
 
+function PrincessLeia (name, money, age, gender){
+  const person = new Person (name, money, age, gender);
+  this.isInTrouble = null;
+
+  for(key in person) {
+    this[key] = person[key];
+  }
+}
+
+PrincessLeia.prototype = Object.create(Person.prototype);
+
+PrincessLeia.prototype.shootsGun = function(){
+  this.isInTrouble = false;
+  return 'Leia shoots her gun wildly';
+}
+
+PrincessLeia.prototype.getsInTrouble = function(){
+  this.isInTrouble = true;
+  return 'Help me Obi-wan Kenobi, you\'re my only hope';
+}
+
+PrincessLeia.prototype.marries = function(loveInterest){
+  if(loveInterest === 'Han Solo'){
+    console.log('Luke Skywalker says gross');
+    return true;
+  } else if (loveInterest === 'Luke Skywalker') {
+    return 'Gross!'
+  } else {
+    return false;
+  }
+}
+
+
 /* Step 34
  *
  * Define an ES5 class named "Stapler" with properties "color"
