@@ -5,6 +5,8 @@
  *
  */
 
+ var unicorn = null;
+
 
 /* Step 2
  *
@@ -12,6 +14,8 @@
  * then assign it to be the value of "Atari"
  *
  */
+
+ var videogame_system = 'Atari';
 
 
 /* Step 3
@@ -21,6 +25,7 @@
  *
  */
 
+var sahara_animal = 'The Addax';
 
 /* Step 4
  *
@@ -30,6 +35,7 @@
  * Capitalize the names.
  */
 
+var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
 /* Step 5
  *
@@ -39,6 +45,7 @@
  *
  */
 
+var galilean_moons = ['Io', 'Europa', 'Ganymede', 'Callisto'];
 
 /* Step 6 φ
  *
@@ -47,6 +54,7 @@
  *
  */
 
+var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -55,6 +63,7 @@
  *
  */
 
+var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -63,6 +72,7 @@
  *
  */
 
+var club_name = 'Fight Club';
 
 /* Step 9
  *
@@ -74,6 +84,11 @@
  *   unknown => undefined
  */
 
+var gender = {
+  female: 'female',
+  male: 'male',
+  unknown: undefined
+}
 
 /* Step 10
  *
@@ -88,6 +103,12 @@
  *
  */
 
+var princess_leia = {
+  name: "Leia Organa",
+  money: 890,
+  age: 20,
+  gender: gender.female
+}
 
 /* Step 11
  *
@@ -101,6 +122,12 @@
  *
  */
 
+var domains {
+  ycombinator.com: '198.41.190.47',
+  laughingsquid.com: '162.159.247.97',
+  slumlordhosting.com: '198.61.179.126',
+  jsonformatter.curiousconcept.com: '104.28.5.70'
+}
 
 /* Step 12
  *
