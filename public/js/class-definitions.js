@@ -483,6 +483,22 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  *
  */
 
+function BankAccount (balance, owner){
+  this.balance = balance;
+  this.owner = owner;
+}
+
+BankAccount.prototype.withdraw = function (amount){
+  this.balance -= amount;
+  this.owner.money += amount;
+}
+
+BankAccount.prototype.deposit = function (amount){
+  this.balance += amount;
+  this.owner.money -= amount;
+}
+
+
 
 /* Step 37
  *
@@ -498,6 +514,8 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  *
  *
  */
+
+
 
 
 /* Step 38
@@ -656,6 +674,36 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {string} gender  male or female
  */
 
+class Animal {
+  constructor (species, gender){
+    this.species = species;
+    this.gender = gender;
+  }
+
+  isWarmBlooded () {
+    switch (this.species){
+      case 'Fish':
+        return false;
+        break;
+      case 'Monkey':
+        return true;
+        break;
+      case 'Bird':
+        return true;
+        break;
+      default:
+        return 'Could not determine if warm-blooded';
+        break;
+    }
+  }
+}
+
+// this.species =>
+//  *                "Fish"   => false
+//  *                "Monkey" => true
+//  *                "Bird"   => true
+//  *       Any other species => "Could not determine if warm-blooded"
+
 
 /**
  * Step 51
@@ -664,6 +712,21 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
+
+class Vehicle {
+  constructor (make, model){
+    this.make = make;
+    this.model = model;
+  }
+
+  drive (streetName) {
+    if (typeof (streetName) === 'string' && streetName ){
+      return 'Driving on ' + streetName;
+    } else {
+      return 'Driving forward';
+    }
+  }
+}
 
 
 /**
@@ -676,6 +739,48 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  *
  */
 
+class Shape {
+  constructor (sides){
+    if (sides >= 3){
+      this.sides = sides;
+    } else {
+      this.sides = null;
+    }
+  }
+
+  getType () {
+    switch (this.sides){
+      case 3:
+        return 'triangle';
+        break;
+      case 4:
+        return 'quadrilateral';
+        break;
+      case 5:
+        return 'pentagon';
+        break;
+      case 6:
+        return 'hexagon';
+        break;
+      case 7:
+        return 'heptagon';
+        break;
+      case 8:
+        return 'octagon';
+        break;
+      case 9:
+        return 'nonagon';
+        break;
+      case 10:
+        return 'decagon';
+        break;
+      default:
+        return 'Could not determine type';
+        break;
+    }
+  }
+}
+
 
 /**
  * Step 53
@@ -685,6 +790,26 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
+class Box {
+  constructor (contents, isOpen){
+    this.contents = contents;
+    this.isOpen = isOpen;
+  }
+
+  openBox (){
+    if(this.isOpen === false){
+      this.isOpen = true;
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+ // * Declare a Box method called openBox that opens the box
+ // * if it is already closed.
+ // * But it should not close the box if it is already open.
+ // * Return true if openBox opens the box, false otherwise.
 
 /**
  * Step 54
@@ -693,6 +818,21 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {boolean} isOpen Whether the door is opened or closed
  */
 
+class Door {
+  constructor (isOpen){
+    this.isOpen = isOpen;
+  }
+
+  openClose(){
+    if (this.isOpen === false){
+      this.isOpen = true;
+      return true;
+    } else {
+      this.isOpen = false;
+      return false;
+    }
+  }
+}
 
 /**
  * Step 55
@@ -703,6 +843,20 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  */
 
 
+class Shoe {
+  constructor (size, color){
+    this.color = color;
+    this.size = size;
+  }
+
+  findShoes (){
+    return 'Found ' + this.color + ' shoes of size ' + this.size;
+  }
+}
+
+ // * Declare a Shoe method called findShoes that returns a string containing
+ // * the color and size of the shoe ("Found red shoes of size 7").
+
 /**
  * Step 56
  *
@@ -710,6 +864,11 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {number} stories How many stories tall the house is
  */
 
+class House {
+  constructor (stories){
+    this.stories = stories;
+  }
+}
 
 /**
  * Step 57
@@ -718,6 +877,11 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {boolean} isOn Whether the light is on or off
  */
 
+class Lightbulb {
+  constructor (isOn){
+    this.isOn = isOn;
+  }
+}
 
 /**
  * Step 58
@@ -726,6 +890,11 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {string} flavor The cookie's flavor
  */
 
+class Cookie {
+  constructor (flavor){
+    this.flavor = flavor;
+  }
+}
 
 /**
  * Step 59
@@ -734,6 +903,11 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
  * @param {Array} foods All the foods in the meal
  */
 
+class Meal {
+  constructor (foods){
+    this.foods = foods;
+  }
+}
 
 /**
  * Create a new instance of the Classes you defined above, below!
@@ -742,45 +916,47 @@ Scientist.prototype.addDiscovery = function (newDiscovery) {
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal ('Monkey', 'male');
+var nemo = new Animal ('Fish', 'male');
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle ('Honda', 'Civic');
+var forte = new Vehicle ('KIA', 'Forte');
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape (6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var cat = new Animal('Cat', 'female');
+var catBox = new Box(cat, true);
+
+var christmasPresent = new Box ('presents', false);
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door(true);
+
+var bankVault = new Door (false);
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers = new Shoe(7, 'red');
+var dressShoes = new Shoe(10, 'black');
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory = new House(1);
+var twoStory = new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent = new Lightbulb(true);
+var halogen = new Lightbulb(false);
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie('chocolate');
+var gingerbread = new Cookie ('gingerbread');
 
 // Create 2 different meals
-var breakfast;
-var dinner;
-
+var breakfast = new Meal('cereal, milk');
+var dinner = new Meal('fish, vegetables');
 
  /* Steps 81 to 90
  *
@@ -803,6 +979,7 @@ var dinner;
  *       Any other species => "Could not determine if warm-blooded"
  *
  */
+
 
 
 /* Step 82
